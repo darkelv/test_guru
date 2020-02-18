@@ -6,7 +6,7 @@ ruby '2.6.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -39,6 +39,16 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+
+  # Pry stuff
+  gem 'pry-rails'
+  gem 'pry-pretty-numeric' # 1_234_768
+  gem 'pry-doc' # ? loop
+  gem 'pry-docmore'
+  gem "pry-stack_explorer" # show-stack in console
+  gem 'pry-byebug' # step, next, finish, continue, break
+
+  gem 'awesome_print' # nice inspection in console
 end
 
 group :development do
