@@ -1,4 +1,4 @@
-class CreateAnswers < ActiveRecord::Migration[5.2]
+class CreateAnswer < ActiveRecord::Migration[5.2]
   def change
     create_table :answers do |t|
       t.references :question, null: false, index: true, foreign_key: true
