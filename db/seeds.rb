@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!([{name: "admin", password: "123"}, {name: "user", password: "123"}])
+User.create!([{name: "admin", password: "123", email: "admin@test)guru.ru"},
+              {name: "user", password: "123", email: "user@test_guru.ry"}])
 category = Category.create!(title: "Ruby")
 test = Test.create!(title: "Ruby_base_test", level: 1, category: category, author: User.first)
 
