@@ -16,7 +16,7 @@ class Test < ApplicationRecord
             numericality: {only_integer: true}
 
   def self.test_by_category(category_title)
-    by_category(category_title).sorted_by_title.pluck(:title)
+    by_category(category_title).pluck(:title)
   end
 
 end
