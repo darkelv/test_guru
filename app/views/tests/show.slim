@@ -1,0 +1,8 @@
+
+ p =test.title
+ p = link_to "Добавить вопрос", new_test_question_path(test.id)
+ - test.questions.each do |question|
+  p = link_to question.body, question_path(question.id)
+  p = link_to "Удалить вопрос", question_path(question.id), method: :delete
+
+
