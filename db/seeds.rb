@@ -12,27 +12,29 @@ categories_title.each do |title|
   Category.create!(title: title)
 end
 
-Test.create!(title: 'RoR beginner', level: 0, author: User.first, category: Category.first)
-Test.create!(title: 'RoR pro', level: 5, author: User.first, category:  Category.first)
-Test.create!(title: 'Ruby pro', level: 5, author: User.first, category:  Category.first)
-Test.create!(title: 'Car driving beginner', level: 1, author: User.first, category:  Category.second)
-Test.create!(title: 'Car driving pro', level: 5, author: User.first, category:  Category.second)
+tests_data = [{title: 'RoR beginner', level: 0, author: User.first, category: Category.first},
+               {title: 'RoR pro', level: 5, author: User.first, category:  Category.first},
+               {title: 'Ruby pro', level: 5, author: User.first, category:  Category.first},
+              {title: 'Car driving beginner', level: 1, author: User.first, category:  Category.second},
+              {title: 'Car driving pro', level: 5, author: User.first, category:  Category.second}]
 
-Question.create!(body: 'Question 1 about something?', test: Test.first)
-Question.create!(body: 'Question 2 about something?', test: Test.first)
-Question.create!(body: 'Question 3 about something?', test: Test.first)
-Question.create!(body: 'Question 4 about something?', test: Test.first)
-Question.create!(body: 'Question 5 about something?', test: Test.first)
-Question.create!(body: 'Question 6 about something?', test: Test.first)
+tests_data.each do |test_data|
+  Test.create!(test_data)
+end
 
-Answer.create!(body: 'Answer 1', correct: true, question: Question.first)
-Answer.create!(body: 'Answer 2', question: Question.second)
-Answer.create!(body: 'Answer 3', question: Question.first)
-Answer.create!(body: 'Answer 4', question: Question.second)
-Answer.create!(body: 'Answer 5', question: Question.second)
-Answer.create!(body: 'Answer 6', correct: true, question: Question.last)
-Answer.create!(body: 'Answer 7', question: Question.first)
-Answer.create!(body: 'Answer 8', question: Question.last)
-Answer.create!(body: 'Answer 9', question: Question.last)
+question_number = 1
+while question_number < 10 do
+  Question.create!(body: "Question #{question_number} about something?", test: Test.first)
+  question_number += 1
+end
+
+Question.find_each do |question|
+  answer_count = 1
+  while answer_count < 4
+    random_boolean = [true, false].sample
+    Answer.create!(body: "Answer #{answer_count}", correct: random_boolean, question: question)
+    answer_count += 1
+  end
+end
 
 User.last.tests << Test.first
