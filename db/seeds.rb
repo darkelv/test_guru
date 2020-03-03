@@ -5,30 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!([{name: "admin", password: "123", email: "admin@test)guru.ru"},
+users = User.create!([{name: "admin", password: "123", email: "admin@test)guru.ru"},
               {name: "user", password: "123", email: "user@test_guru.ry"}])
 categories_title = %w[Programming Driving Cooking]
+categories = []
 categories_title.each do |title|
-  Category.create!(title: title)
+  categories << Category.create!(title: title)
 end
 
-tests_data = [{title: 'RoR beginner', level: 0, author: User.first, category: Category.first},
-               {title: 'RoR pro', level: 5, author: User.first, category:  Category.first},
-               {title: 'Ruby pro', level: 5, author: User.first, category:  Category.first},
-              {title: 'Car driving beginner', level: 1, author: User.first, category:  Category.second},
-              {title: 'Car driving pro', level: 5, author: User.first, category:  Category.second}]
-
+tests_data = [{title: 'RoR beginner', level: 0, author: users[0], category: categories[0]},
+               {title: 'RoR pro', level: 5, author: users[0], category:  categories[0]},
+               {title: 'Ruby pro', level: 5, author: users[0], category:  categories[0]},
+              {title: 'Car driving beginner', level: 1, author: users[0], category:  categories[1]},
+              {title: 'Car driving pro', level: 5, author: users[0], category:  categories[1]}]
+tests = []
 tests_data.each do |test_data|
-  Test.create!(test_data)
+  tests << Test.create!(test_data)
 end
 
+questions = []
 question_number = 1
 while question_number < 10 do
-  Question.create!(body: "Question #{question_number} about something?", test: Test.first)
+  questions << Question.create!(body: "Question #{question_number} about something?", test: tests[0])
   question_number += 1
 end
 
-Question.find_each do |question|
+questions.each do |question|
   answer_count = 1
   while answer_count < 4
     random_boolean = [true, false].sample
@@ -37,4 +39,4 @@ Question.find_each do |question|
   end
 end
 
-User.last.tests << Test.first
+users[1].tests << tests[0]
