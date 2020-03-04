@@ -13,21 +13,19 @@ categories_title.each do |title|
   categories << Category.create!(title: title)
 end
 
-tests_data = [{title: 'RoR beginner', level: 0, author: users[0], category: categories[0]},
+tests = Test.create!([{title: 'RoR beginner', level: 0, author: users[0], category: categories[0]},
                {title: 'RoR pro', level: 5, author: users[0], category:  categories[0]},
                {title: 'Ruby pro', level: 5, author: users[0], category:  categories[0]},
               {title: 'Car driving beginner', level: 1, author: users[0], category:  categories[1]},
-              {title: 'Car driving pro', level: 5, author: users[0], category:  categories[1]}]
-tests = []
-tests_data.each do |test_data|
-  tests << Test.create!(test_data)
-end
+              {title: 'Car driving pro', level: 5, author: users[0], category:  categories[1]}])
 
 questions = []
-question_number = 1
-while question_number < 10 do
-  questions << Question.create!(body: "Question #{question_number} about something?", test: tests[0])
-  question_number += 1
+tests.each do |test|
+  question_number = 1
+  while question_number < 10 do
+    questions << Question.create!(body: "Question #{question_number} about something?", test: test)
+    question_number += 1
+  end
 end
 
 questions.each do |question|

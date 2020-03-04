@@ -5,7 +5,7 @@
     thead
       tr
         th = "Вопрос"
-        th colspan="3" = "Действие"
+        th colspan="2" = "Действие"
     tbody
       - test.questions.each do |question|
         tr
@@ -13,6 +13,7 @@
           td= link_to "Удалить", question_path(question.id), method: :delete,
                   data: {confirm: "Вы уврены?"}
           td= link_to "Редактировать", edit_question_path(question.id)
+  br
   span>
     = link_to "Добавить вопрос", new_test_question_path(test)
   = link_to "Назад", tests_path
