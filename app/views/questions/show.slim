@@ -1,2 +1,5 @@
-
-  p =question.body
+  p = question.test.title
+  p = question.body
+  span>
+    = link_to 'Back', test_path(@question.test)
+  = link_to 'Edit', edit_question_path(@question)

@@ -1,5 +1,4 @@
-| Создать новый вопрос
+  h1
+    = question_header_by(@question)
+  = render partial: 'form', locals: {question: @question, test_id: @question.test.id}
 
-= form_for :question, url: test_questions_path do |f|
-  =f.text_field :body
-  =f.submit "Сохранить"

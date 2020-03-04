@@ -5,11 +5,36 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-User.create!([{name: "admin", password: "123", email: "admin@test)guru.ru"},
+users = User.create!([{name: "admin", password: "123", email: "admin@test)guru.ru"},
               {name: "user", password: "123", email: "user@test_guru.ry"}])
-category = Category.create!(title: "Ruby")
-test = Test.create!(title: "Ruby_base_test", level: 1, category: category, author: User.first)
+categories_title = %w[Programming Driving Cooking]
+categories = []
+categories_title.each do |title|
+  categories << Category.create!(title: title)
+end
 
-question = Question.create!(test: test, body: "Generate an empty migration to make the posts table.")
-Answer.create!(question: question, body: "rails generate migration CreatePosts", correct: true)
-User.last.tests << Test.last
+tests = Test.create!([{title: 'RoR beginner', level: 0, author: users[0], category: categories[0]},
+               {title: 'RoR pro', level: 5, author: users[0], category:  categories[0]},
+               {title: 'Ruby pro', level: 5, author: users[0], category:  categories[0]},
+              {title: 'Car driving beginner', level: 1, author: users[0], category:  categories[1]},
+              {title: 'Car driving pro', level: 5, author: users[0], category:  categories[1]}])
+
+questions = []
+tests.each do |test|
+  question_number = 1
+  while question_number < 10 do
+    questions << Question.create!(body: "Question #{question_number} about something?", test: test)
+    question_number += 1
+  end
+end
+
+questions.each do |question|
+  answer_count = 1
+  while answer_count < 4
+    random_boolean = [true, false].sample
+    Answer.create!(body: "Answer #{answer_count}", correct: random_boolean, question: question)
+    answer_count += 1
+  end
+end
+
+users[1].tests << tests[0]

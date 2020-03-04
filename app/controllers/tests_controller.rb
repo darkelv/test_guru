@@ -1,4 +1,5 @@
 class TestsController < ApplicationController
+  before_action :set_test, only: %i[show]
 
   def index
     tests = Test.all
@@ -6,7 +7,12 @@ class TestsController < ApplicationController
   end
 
   def show
-    test = Test.find(params[:id])
-    render locals: { test: test }
+    render locals: { test: @test }
+  end
+
+  private
+
+  def set_test
+    @test = Test.find(params[:id])
   end
 end

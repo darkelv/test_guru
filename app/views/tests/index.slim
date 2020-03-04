@@ -1,5 +1,17 @@
 
-  | Список тестов
+  h1 Список тестов
 
-  - tests.each do |test|
-    p = link_to test.title, test_path(test.id)
+  table
+    thead
+      tr
+        th = "Название"
+        th = "Уровень"
+        th = "Категория"
+        th = "Количество вопросов"
+    tbody
+      - tests.each do |test|
+        tr
+          td = link_to test.title, test_path(test.id)
+          td align="center" = test.level
+          td = test.category&.title
+          td align="center" = test.questions.count
