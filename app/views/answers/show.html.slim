@@ -1,0 +1,9 @@
+h1 Вопрос
+
+p
+  = @answer.body
+p
+  b Правильно:
+  = @answer.correct
+br
+= link_to 'Back', question_path(@answer.question)

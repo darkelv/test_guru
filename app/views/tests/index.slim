@@ -15,3 +15,4 @@
           td align="center" = test.level
           td = test.category&.title
           td align="center" = test.questions.count
+          td = button_to "Начать тест", start_test_path(test.id)
