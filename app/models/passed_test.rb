@@ -1,4 +1,5 @@
 class PassedTest < ApplicationRecord
+  TEST_SUCCESS_RATE = 85
 
   belongs_to :user
   belongs_to :test
