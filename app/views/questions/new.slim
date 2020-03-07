@@ -1,4 +1,3 @@
-  h1
-    = question_header_by(@question)
-  = render partial: 'form', locals: {question: @question, test_id: @question.test.id}
+h1 = question_header_by(@question)
+= render partial: 'form', locals: {question: @question, test_id: @question.test.id}
 
