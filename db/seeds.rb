@@ -5,8 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.create!([{name: "admin", password: "123", email: "admin@test)guru.ru"},
-              {name: "user", password: "123", email: "user@test_guru.ry"}])
+users = User.create!([{name: "admin", email: "admin@test)guru.ru"},
+              {name: "user", email: "user@test_guru.ry"}])
 categories_title = %w[Programming Driving Cooking]
 categories = []
 categories_title.each do |title|
@@ -36,5 +36,3 @@ questions.each do |question|
     answer_count += 1
   end
 end
-
-users[1].tests << tests[0]
