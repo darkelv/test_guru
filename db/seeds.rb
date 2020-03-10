@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-users = User.create!([{name: "admin", email: "admin@test)guru.ru"},
+users = User.create!([{name: "admin", email: "admin@test_guru.ru", role: User::ROLES[:admin]},
               {name: "user", email: "user@test_guru.ry"}])
 categories_title = %w[Programming Driving Cooking]
 categories = []

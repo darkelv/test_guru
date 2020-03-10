@@ -1,13 +1,9 @@
 class TestsController < ApplicationController
-  before_action :set_test, only: %i[show start result]
+  before_action :set_test, only: %i[start]
 
   def index
-    tests = Test.all
-    render locals: { tests: tests }
-  end
-
-  def show
-    render locals: { test: @test }
+    @tests = Test.all
+    render locals: { tests: @tests }
   end
 
   def start

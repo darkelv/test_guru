@@ -1,0 +1,21 @@
+
+  h1
+    = @test.title
+
+  table
+    thead
+      tr
+        th = "Вопрос"
+        th colspan="2" = "Действие"
+    tbody
+      - @test.questions.each do |question|
+        tr
+          td= link_to question.body, admin_question_path(question.id)
+          td= link_to "Удалить", admin_question_path(question.id), method: :delete,
+                  data: {confirm: "Вы уврены?"}
+          td= link_to "Редактировать", edit_admin_question_path(question.id)
+  br
+  span>
+    = link_to "Добавить вопрос", new_admin_test_question_path(@test)
+  = link_to "Назад", admin_tests_path
+
