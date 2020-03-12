@@ -1,0 +1,9 @@
+li
+  span>
+    = answer.body
+  span>
+    = link_to 'Показать', admin_answer_path(answer)
+  span>
+    = link_to 'Рдактировать', edit_admin_answer_path(answer)
+  span>
+    = link_to 'Delete', admin_answer_path(answer), method: :delete, data: {confirm: 'Вы верены'}

@@ -1,25 +1,25 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
 
   protect_from_forgery with: :exception
+  before_action :authenticate_user!
 
-  helper_method :current_user,
-                :logged_in?
 
-  private
+  before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def authenticate_user!
-    unless current_user
-      session[:referer] = request.url
-      redirect_to login_path, alert: 'Вы зарегистрированы? Наберите имя пользователя и пароль для продолжения работы'
+
+  protected
+
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :name, :password])
+    devise_parameter_sanitizer.permit(:login, keys: [:email, :password, :remember_me])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email, :password, :remember_me])
+  end
+
+  def after_sign_in_path_for(resource)
+    if current_user.admin?
+      admin_tests_path
+    else
+      super
     end
-  end
-
-  def current_user
-    @current_user ||= User.find_by(id: session[:user_id]) if session[:user_id]
-  end
-
-  def logged_in?
-    current_user.present?
   end
 end

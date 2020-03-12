@@ -1,0 +1,5 @@
+= render partial: "layouts/errors", locals: {resource: @question}
+= form_for :question, url: admin_test_questions_path(test_id) do |f|
+  =f.label :body, "Текст вопроса:"
+  =f.text_field :body
+  =f.submit "Сохранить"

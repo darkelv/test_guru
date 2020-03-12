@@ -1,0 +1,12 @@
+p = question.test.title
+p = question.body
+br
+h2 Ответы
+
+ol
+  =render @question.answers
+
+span>
+  = link_to 'Назад', admin_test_path(@question.test)
+=> link_to 'Редактировать', edit_admin_question_path(@question)
+= link_to 'Новый ответ', new_admin_question_answer_path(@question)
