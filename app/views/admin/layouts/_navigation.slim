@@ -1,8 +1,5 @@
 div class = 'nav nav-admin'
-  span> class = 'nav-admin title' Меню:
-  a href = admin_tests_path TestGuru Admin Panel
+  a href = admin_tests_path #{t('.link_index_admin_panel')}
   div class = 'nav-admin user'
-    span>
-      | Добро пожаловать,
-    => current_user.name
-    => link_to "Выxод", destroy_user_session_path, method: :delete
+    => "#{t('.welcome_back_html', username: current_user.name)}"
+    => link_to t('.logout'), destroy_user_session_path, method: :delete

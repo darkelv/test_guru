@@ -1,12 +1,11 @@
-h1 Текущий тест:
-= @current_test_passage.test.title
-br
-= show_current_question_num_of_total
-br
-  = @current_test_passage.current_question.body
+h1 = t('.title', test_title: @current_test_passage.test.title)
+h2
+  = show_current_question_num_of_total
+
+= @current_test_passage.current_question.body
 = form_with url: passed_test_path(@current_test_passage), local: true, method: :put do |form|
   = form.collection_check_boxes :answer_ids, @current_test_passage.current_question.answers, :id, :body, include_hidden: false do |b|
     p
       = b.check_box id: "answer_ids_#{b.object.id}", style: "float:left"
       = b.label
-  = form.submit 'Следующий вопрос'
+  = form.submit t('.button_next')

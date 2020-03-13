@@ -7,6 +7,6 @@ ol
   =render @question.answers
 
 span>
-  = link_to 'Назад', admin_test_path(@question.test)
-=> link_to 'Редактировать', edit_admin_question_path(@question)
-= link_to 'Новый ответ', new_admin_question_answer_path(@question)
+  = link_to I18n.t('.link_to_back'), admin_test_path(@question.test)
+=> link_to I18n.t('.link_to_edit'), edit_admin_question_path(@question)
+= link_to I18n.t('admin.answers.link_to_add_answer'), new_admin_question_answer_path(@question)

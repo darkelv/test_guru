@@ -1,21 +1,21 @@
 
   h1
-    = @test.title
+    = t('.list_of_questions_title', test_id: @test.id, test_title: @test.title)
 
   table
     thead
       tr
-        th = "Вопрос"
-        th colspan="2" = "Действие"
+        th = t('.question_text')
+        th colspan="2" = I18n.t('.actions')
     tbody
       - @test.questions.each do |question|
         tr
           td= link_to question.body, admin_question_path(question.id)
-          td= link_to "Удалить", admin_question_path(question.id), method: :delete,
-                  data: {confirm: "Вы уврены?"}
-          td= link_to "Редактировать", edit_admin_question_path(question.id)
+          td= link_to I18n.t('.link_to_delete'), admin_question_path(question.id), method: :delete,
+                  data: {confirm: I18n.t('.are_you_sure')}
+          td= link_to I18n.t('.link_to_edit'), edit_admin_question_path(question.id)
   br
   span>
-    = link_to "Добавить вопрос", new_admin_test_question_path(@test)
-  = link_to "Назад", admin_tests_path
+    = link_to t('.link_to_add_question'), new_admin_test_question_path(@test)
+  = link_to I18n.t('.link_to_back'), admin_tests_path
 

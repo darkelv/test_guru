@@ -1,33 +1,89 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  helpers:
+    select:
+      prompt: "Choose"
+    submit:
+      test:
+        create: "Create test"
+        update:  "Update test"
+      user:
+        create: "Register"
+    label:
+      test:
+        title: "Title"
+        level: "Test level"
+        category_id: "Category"
+
+  layouts:
+    errors:
+      header:
+        one: "%{count} error detected"
+        other: "%{count} errors detected"
+    navigation:
+      navigation: "Navigation"
+      logout_link: "Log out"
+      welcome_back: "Welcome back, %{username}!"
+      signup: "Sign Up"
+      login: "Log In"
+
+  tests:
+    index:
+      header: "List of all tests:"
+      test_number: "#"
+      title: "Title"
+      level: "Level"
+      category: "Category"
+      count_questions: "Count questions"
+    test:
+      start_test_button: "Start"
+
+  passed_tests:
+    result:
+      header: 'Test "%{title}" was completed!'
+      score_message: "Your score is: %{scores}"
+    show:
+      title: "Current test is: %{test_title}"
+      button_next: "Next"
+    result_message:
+      passed_test_message: "You passed the test"
+      failed_test_message: "You failed the test"
+
+  admin:
+    answers:
+      link_to_add_answer: "Add new answer"
+    tests:
+      index:
+        header: "List of all tests:"
+        link_new_test: "New test"
+      create:
+        success: "Test was successfully created!"
+      show:
+        list_of_questions_title: 'List of questions for test #%{test_id} - "%{test_title}"'
+        question_text: "Question"
+        link_to_add_question: "Add new question"
+      new:
+        title: "Create new test?"
+      edit:
+        title: 'Edit "%{test_title}" test'
+      update:
+        success: "Test successfully updated."
+    base:
+      not_authorized_to_see_the_page: "You are not authorized to view this page!"
+    layouts:
+      navigation:
+        welcome_back_html: "Welcome, %{username} Guru Admin"
+        logout: "Log out"
+        link_index_admin_panel: "TestGuru Admin Panel"
+  tests_mailer:
+    completed_test:
+      subject: 'You just completed the TestGuru test!'
+
+  question_num_of_total_html: "Question # %{question_number} of %{total}"
+  link_to_delete: "Delete"
+  are_you_sure: "Are you sure?"
+  link_to_show: "Show"
+  link_to_edit: "Edit"
+  link_to_back: "Back"
+  actions: "Actions"

@@ -1,0 +1,90 @@
+ru:
+  hello: "Привет Мир!"
+
+  helpers:
+    select:
+      prompt: "Выберите"
+    submit:
+      test:
+        create: "Создать тест"
+        update: "Обновить тест"
+      user:
+        create: "Зарегистрировать"
+    label:
+      test:
+        title: "Название"
+        level: "Уровень теста"
+        category_id: "Категория"
+
+  layouts:
+    errors:
+      header:
+        few: "Обнаружено %{count} ошибки"
+        many: "Обнаружено %{count} ошибок"
+        one: "Обнаружена %{count} ошибка"
+        other: "Обнаружено %{count} ошибки"
+    navigation:
+      navigation: "Навигация"
+      logout_link: "Выйти"
+      welcome_back: "С возвращением, %{username}!"
+      signup: "Регистрация"
+      login: "Вход"
+  tests:
+    index:
+      header: "Список всех тестов:"
+      test_number: "№"
+      title: "Название"
+      level: "Уровень"
+      category: "Категория"
+      count_questions: "Количество вопросов"
+    test:
+      start_test_button: "Начать"
+  passed_tests:
+    result:
+      header: 'Тест "%{title}" успешно завершен!'
+      score_message: "Ваша оценка: %{scores}"
+    show:
+      title: "Текущий тест: %{test_title}"
+      button_next: "Далее"
+    result_message:
+      passed_test_message: "Вы прошли тест"
+      failed_test_message: "Тест не пройден"
+  admin:
+    answers:
+      link_to_add_answer: "Добавить новый ответ"
+    tests:
+      index:
+        header: "Список всех тестов:"
+        link_new_test: "Создать тест"
+      create:
+        success: "Тест был успешно создан!"
+      show:
+        list_of_questions_title: 'Список вопросов для теста №%{test_id} - "%{test_title}"'
+        question_text: "Вопрос"
+        link_to_add_question: "Добавить новый вопрос"
+      new:
+        title: "Создадим новый тест?"
+      edit:
+        title: 'Редактировать тест "%{test_title}"'
+      update:
+        success: "Тест успешно обновлен."
+    base:
+      not_authorized_to_see_the_page: "Доступ к данной странице разрешен только администраторам"
+    layotus:
+      navigation:
+        welcome_back_html: "С возвращением, %{username}"
+        logout: "Выйти"
+        link_index_admin_panel: "Административная панель Test Guru"
+
+  tests_mailer:
+    completed_test:
+      subject: 'Вы только что прошли тест на TestGuru!'
+
+  question_num_of_total_html: "Вопрос № %{question_number} из %{total}"
+  link_to_delete: "Удалить"
+  link_to_show: "Показать"
+  link_to_edit: "Редактировать"
+  link_to_back: "Назад"
+  are_you_sure: "Вы уверены?"
+  actions: "Действия"
+

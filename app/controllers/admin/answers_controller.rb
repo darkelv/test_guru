@@ -36,7 +36,6 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_answer
       @answer = Answer.find(params[:id])
     end
@@ -45,7 +44,6 @@ class Admin::AnswersController < Admin::BaseController
     @question = Question.find(params[:question_id])
   end
 
-    # Only allow a list of trusted parameters through.
     def answer_params
       params.require(:answer).permit(:body, :correct)
     end
