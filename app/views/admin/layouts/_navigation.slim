@@ -1,5 +1,5 @@
 div class = 'nav nav-admin'
-  a href = admin_tests_path #{t('.link_index_admin_panel')}
+  a href = admin_tests_path #{I18n.t('admin.layouts.navigation.link_index_admin_panel')}
   div class = 'nav-admin user'
-    => "#{t('.welcome_back_html', username: current_user.name)}"
-    => link_to t('.logout'), destroy_user_session_path, method: :delete
+    => "#{I18n.t('admin.layouts.navigation.welcome_back_html', username: current_user.name)}"
+    => link_to I18n.t('admin.layouts.navigation.logout'), destroy_user_session_path, method: :delete

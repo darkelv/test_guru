@@ -1,4 +1,4 @@
-h1 = t('.title', test_title: @current_test_passage.test.title)
+h1 = I18n.t('passed_tests.show.title', test_title: @current_test_passage.test.title)
 h2
   = show_current_question_num_of_total
 
@@ -8,4 +8,4 @@ h2
     p
       = b.check_box id: "answer_ids_#{b.object.id}", style: "float:left"
       = b.label
-  = form.submit t('.button_next')
+  = form.submit I18n.t('passed_tests.show.button_next')

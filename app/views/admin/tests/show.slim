@@ -1,11 +1,11 @@
 
   h1
-    = t('.list_of_questions_title', test_id: @test.id, test_title: @test.title)
+    = I18n.t('admin.tests.show.list_of_questions_title', test_id: @test.id, test_title: @test.title)
 
   table
     thead
       tr
-        th = t('.question_text')
+        th = I18n.t('admin.tests.show.question_text')
         th colspan="2" = I18n.t('.actions')
     tbody
       - @test.questions.each do |question|
@@ -16,6 +16,6 @@
           td= link_to I18n.t('.link_to_edit'), edit_admin_question_path(question.id)
   br
   span>
-    = link_to t('.link_to_add_question'), new_admin_test_question_path(@test)
+    = link_to I18n.t('admin.tests.show.link_to_add_question'), new_admin_test_question_path(@test)
   = link_to I18n.t('.link_to_back'), admin_tests_path
 

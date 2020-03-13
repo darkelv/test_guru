@@ -1,4 +1,4 @@
-<h2><%= t('.header') %></h2>
+<h2><%= I18n.t('devise.registrations.new.header') %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -16,7 +16,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-      <em><%= t('.minimum_characters', characters_min_amount: @minimum_password_length) %></em>
+      <em><%= I18n.t('devise.registrations.new.minimum_characters', characters_min_amount: @minimum_password_length) %></em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>

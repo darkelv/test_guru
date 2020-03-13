@@ -1,4 +1,4 @@
 h1
-  = t('.title', test_title: @test.title)
+  = I18n.t('admin.tests.edit.title', test_title: @test.title)
 =render 'form'
 =link_to I18n.t('.link_to_back'), admin_tests_path

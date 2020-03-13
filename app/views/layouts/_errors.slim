@@ -1,7 +1,7 @@
 - if resource.errors.present?
   h2
     span>
-      = t('.header', count: resource.errors.count)
+      = I18n.t('layouts.errors.header', count: resource.errors.count)
   ul
     -resource.errors.full_messages.each do |messege|
       li

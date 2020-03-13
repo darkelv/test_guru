@@ -15,7 +15,6 @@ en:
         title: "Title"
         level: "Test level"
         category_id: "Category"
-
   layouts:
     errors:
       header:
@@ -27,7 +26,6 @@ en:
       welcome_back: "Welcome back, %{username}!"
       signup: "Sign Up"
       login: "Log In"
-
   tests:
     index:
       header: "List of all tests:"
@@ -38,7 +36,6 @@ en:
       count_questions: "Count questions"
     test:
       start_test_button: "Start"
-
   passed_tests:
     result:
       header: 'Test "%{title}" was completed!'
@@ -49,7 +46,6 @@ en:
     result_message:
       passed_test_message: "You passed the test"
       failed_test_message: "You failed the test"
-
   admin:
     answers:
       link_to_add_answer: "Add new answer"

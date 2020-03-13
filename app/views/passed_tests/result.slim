@@ -1,2 +1,2 @@
-h1 = t('.header', title: @current_test_passage.test.title)
+h1 = I18n.t('passed_tests.result.header', title: @current_test_passage.test.title)
 = render partial: 'result_message'
