@@ -1,2 +1,5 @@
-h1 = I18n.t('passed_tests.result.header', title: @current_test_passage.test.title)
-= render partial: 'result_message'
+div class = 'row justify-content-center mt-3'
+  .col.col-md-6.col-lg-12
+    h1 = I18n.t('passed_tests.result.header', title: @current_test_passage.test.title)
+div class = 'card-body'
+  = render partial: 'result_message'

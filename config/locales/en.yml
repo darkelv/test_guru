@@ -21,7 +21,6 @@ en:
         one: "%{count} error detected"
         other: "%{count} errors detected"
     navigation:
-      navigation: "Navigation"
       logout_link: "Log out"
       welcome_back: "Welcome back, %{username}!"
       signup: "Sign Up"
@@ -36,6 +35,8 @@ en:
       count_questions: "Count questions"
     test:
       start_test_button: "Start"
+    start:
+      success: "Let's go!"
   passed_tests:
     result:
       header: 'Test "%{title}" was completed!'
@@ -72,6 +73,7 @@ en:
         welcome_back_html: "Welcome, %{username} Guru Admin"
         logout: "Log out"
         link_index_admin_panel: "TestGuru Admin Panel"
+        title: "TestGuru"
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'

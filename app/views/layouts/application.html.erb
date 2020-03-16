@@ -1,19 +1,28 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TestGuru</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <title>ThinknetikaTestGuru</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <%= render 'layouts/navigation' %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-  <body>
-    <%= yield %>
-  </body>
+</head>
 
+<body>
+<%= render 'layouts/navigation' %>
+
+<div class="container">
+  <%= render 'layouts/flash_messages' %>
+  <%= yield %>
+</div>
+
+<div class="card-footer text-muted mt-3">
   <%= render 'layouts/footer' %>
+</div>
+</body>
 </html>
