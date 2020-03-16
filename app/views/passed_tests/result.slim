@@ -1,3 +1,2 @@
-h1 = "#{@current_test_passage.test.title} тест заверщен"
-h1 = "Ваш результат: #{@current_test_passage.rate_percentage}"
+h1 = I18n.t('passed_tests.result.header', title: @current_test_passage.test.title)
 = render partial: 'result_message'

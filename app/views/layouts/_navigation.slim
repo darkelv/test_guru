@@ -1,11 +1,9 @@
-p class="nav bar" Меню:
-=> link_to 'Test Guru', root_path
+p class="nav bar"
+  => I18n.t('layouts.navigation.navigation')
+  => link_to 'Test Guru', root_path
 - if user_signed_in?
-  => link_to 'Выход', destroy_user_session_path, method: :delete
-  p
-    span>
-      | Добро пожаловать,
-    = current_user.name
+  => I18n.t('layouts.navigation.welcome_back', username: current_user.name)
+  => link_to I18n.t('layouts.navigation.logout_link'), destroy_user_session_path, method: :delete
 - else
-  => link_to 'Регистрация', new_user_registration_path
-  = link_to 'Вход', new_user_session_path
+  => link_to I18n.t('layouts.navigation.signup'), new_user_registration_path
+  = link_to I18n.t('layouts.navigation.login'), new_user_session_path

@@ -3,12 +3,12 @@ class TestsController < ApplicationController
 
   def index
     @tests = Test.all
-    render locals: { tests: @tests }
+    render locals: { tests: @tests }, notice: t('.success')
   end
 
   def start
     current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test)
+    redirect_to current_user.test_passage(@test), notice: t('.success')
   end
 
   private

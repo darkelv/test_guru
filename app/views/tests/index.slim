@@ -1,13 +1,15 @@
 
-  h1 Список тестов
+  h1
+    = I18n.t('tests.index.header')
 
   table
     thead
       tr
-        th = "Название"
-        th = "Уровень"
-        th = "Категория"
-        th = "Количество вопросов"
+        th = I18n.t('tests.index.title')
+        th = I18n.t('tests.index.level')
+        th = I18n.t('tests.index.category')
+        th = I18n.t('tests.index.count_questions')
+        th = I18n.t('.actions')
     tbody
       - tests.each do |test|
         tr
@@ -15,4 +17,4 @@
           td align="center" = test.level
           td = test.category&.title
           td align="center" = test.questions.count
-          td = button_to "Начать тест", start_test_path(test.id)
+          td = button_to I18n.t('tests.test.start_test_button'), start_test_path(test.id)

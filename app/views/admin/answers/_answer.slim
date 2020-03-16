@@ -2,8 +2,8 @@ li
   span>
     = answer.body
   span>
-    = link_to 'Показать', admin_answer_path(answer)
+    = link_to I18n.t('.link_to_show'), admin_answer_path(answer)
   span>
-    = link_to 'Рдактировать', edit_admin_answer_path(answer)
+    = link_to I18n.t('.link_to_edit'), edit_admin_answer_path(answer)
   span>
-    = link_to 'Delete', admin_answer_path(answer), method: :delete, data: {confirm: 'Вы верены'}
+    = link_to I18n.t('.link_to_delete'), admin_answer_path(answer), method: :delete, data: {confirm: "#{I18n.t('.are_you_sure')}"}

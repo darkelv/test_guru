@@ -1,9 +1,7 @@
 - if resource.errors.present?
   h2
     span>
-      = pluralize(resource.errors.count, 'Ошибка')
-    | обнаружено
-
+      = I18n.t('layouts.errors.header', count: resource.errors.count)
   ul
     -resource.errors.full_messages.each do |messege|
       li
