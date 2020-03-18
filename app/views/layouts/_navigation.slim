@@ -1,9 +1,10 @@
-p class="nav bar"
-  => I18n.t('layouts.navigation.navigation')
-  => link_to 'Test Guru', root_path
-- if user_signed_in?
-  => I18n.t('layouts.navigation.welcome_back', username: current_user.name)
-  => link_to I18n.t('layouts.navigation.logout_link'), destroy_user_session_path, method: :delete
-- else
-  => link_to I18n.t('layouts.navigation.signup'), new_user_registration_path
-  = link_to I18n.t('layouts.navigation.login'), new_user_session_path
+nav class= 'navbar navbar-light bg-light'
+  - if user_signed_in?
+    = link_to I18n.t('admin.layouts.navigation.title'), current_user.admin? ? admin_tests_path : root_path, class: "navbar-brand"
+    span
+      => I18n.t('layouts.navigation.welcome_back', username: current_user.name)
+      = link_to I18n.t('layouts.navigation.logout_link'), destroy_user_session_path, method: :delete
+  - else
+    span
+      => link_to I18n.t('layouts.navigation.signup'), new_user_registration_path
+      = link_to I18n.t('layouts.navigation.login'), new_user_session_path

@@ -24,7 +24,6 @@ ru:
         one: "Обнаружена %{count} ошибка"
         other: "Обнаружено %{count} ошибки"
     navigation:
-      navigation: "Навигация"
       logout_link: "Выйти"
       welcome_back: "С возвращением, %{username}!"
       signup: "Регистрация"
@@ -39,6 +38,8 @@ ru:
       count_questions: "Количество вопросов"
     test:
       start_test_button: "Начать"
+    start:
+      success: "Начали!"
   passed_tests:
     result:
       header: 'Тест "%{title}" успешно завершен!'
@@ -70,12 +71,12 @@ ru:
         success: "Тест успешно обновлен."
     base:
       not_authorized_to_see_the_page: "Доступ к данной странице разрешен только администраторам"
-    layotus:
+    layouts:
       navigation:
         welcome_back_html: "С возвращением, %{username}"
         logout: "Выйти"
         link_index_admin_panel: "Административная панель Test Guru"
-
+        title: "TestGuru"
   tests_mailer:
     completed_test:
       subject: 'Вы только что прошли тест на TestGuru!'
