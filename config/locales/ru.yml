@@ -50,6 +50,9 @@ ru:
     result_message:
       passed_test_message: "Вы прошли тест"
       failed_test_message: "Тест не пройден"
+    gist:
+      success: 'Gist %{url} успешно сохранен!'
+      failure: "Во время сохранения gist произошла ошибка"
   admin:
     answers:
       link_to_add_answer: "Добавить новый ответ"
@@ -77,6 +80,12 @@ ru:
         logout: "Выйти"
         link_index_admin_panel: "Административная панель Test Guru"
         title: "TestGuru"
+    gists:
+      index:
+        header: "Список Gists созданных пользователями"
+        question: "Вопрос"
+        url: "Ссылка"
+        user_email: "Email пользователя"
   tests_mailer:
     completed_test:
       subject: 'Вы только что прошли тест на TestGuru!'

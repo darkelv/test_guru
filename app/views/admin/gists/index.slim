@@ -1,0 +1,18 @@
+h1
+  = I18n.t('admin.gists.index.header')
+
+table.table-hover
+  thead.thead-dark
+    tr
+      th = I18n.t('tests.index.test_number')
+      th = I18n.t('admin.gists.index.question')
+      th = I18n.t('admin.gists.index.url')
+      th = I18n.t('admin.gists.index.user_email')
+  tbody
+    - @gists.each do |gist|
+      tr
+        td = gist.id
+        td = gist.question.body[0, 25]
+        td = link_to gist.url, gist.url, target: :blank
+        td = gist.user.email
+
