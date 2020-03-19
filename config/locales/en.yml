@@ -47,6 +47,9 @@ en:
     result_message:
       passed_test_message: "You passed the test"
       failed_test_message: "You failed the test"
+    gist:
+      success: "Gist %{url} successfully saved!"
+      failure: "An error occured while saving gist"
   admin:
     answers:
       link_to_add_answer: "Add new answer"
@@ -74,6 +77,12 @@ en:
         logout: "Log out"
         link_index_admin_panel: "TestGuru Admin Panel"
         title: "TestGuru"
+    gists:
+      index:
+        header: "All Gists created by users"
+        question: "Question"
+        url: "URL"
+        user_email: "User email"
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'

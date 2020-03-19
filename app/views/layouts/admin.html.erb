@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
   <title><%= I18n.t('admin.layouts.navigation.link_index_admin_panel') %></title>
   <%= csrf_meta_tags %>
   <%= csp_meta_tag %>
@@ -10,11 +13,11 @@
 </head>
 
 <body>
-<%= render 'admin/layouts/navigation' %>
-<%= render 'layouts/flash_messages' %>
-
-<%= yield %><br><br>
-
+  <%= render 'admin/layouts/navigation' %>
+  <div class="container">
+    <%= render 'layouts/flash_messages' %>
+    <%= yield %><br><br>
+  </div>
 </body>
 
 <%= render 'layouts/footer' %>

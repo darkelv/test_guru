@@ -39,6 +39,12 @@ gem 'devise-i18n'
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
 
+# Networking
+gem "octokit"
+
+# Environment
+gem 'dotenv-rails'
+
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

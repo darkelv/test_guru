@@ -15,3 +15,4 @@
                 => b.check_box id: "answer_ids_#{b.object.id}"
                 = b.label
             = form.submit I18n.t('passed_tests.show.button_next'), class: 'btn btn-primary'
+= link_to 'Gist Question', gist_passed_test_path(@current_test_passage), method: :post

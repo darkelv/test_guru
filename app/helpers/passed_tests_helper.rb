@@ -7,8 +7,10 @@ module PassedTestsHelper
   def test_result
     if @current_test_passage.completed?
       if @current_test_passage.rate_percentage >= PassedTest::TEST_SUCCESS_RATE
+        simple_format("#{I18n.t('passed_tests.result_message.passed_test_message')}", {}, wrapper_tag: "h1")
         simple_format("#{t('passed_tests.result.score_message', scores: @current_test_passage.rate_percentage)}", {style: 'color: green'}, wrapper_tag: "h2")
       else
+        simple_format("#{I18n.t('passed_tests.result_message.failed_test_message')}", {}, wrapper_tag: "h1")
         simple_format("#{t('passed_tests.result.score_message', scores: @current_test_passage.rate_percentage)}", {style: 'color: red'}, wrapper_tag: "h2")
       end
     end
