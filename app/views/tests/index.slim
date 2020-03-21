@@ -1,20 +1,22 @@
+h1
+  = I18n.t('tests.index.header')
 
-  h1
-    = I18n.t('tests.index.header')
-
-  table.table-hover
-    thead.thead-dark
+table.table.table-hover
+  thead.thead-dark
+    tr
+      th = I18n.t('tests.index.level')
+      th.sort-by-title.pointer
+        = I18n.t('tests.index.title')
+        = octicon 'arrow-up', class: 'text-success hide', height: 20
+        = octicon 'arrow-down', class: 'text-success hide', height: 20
+      th = I18n.t('tests.index.category')
+      th = I18n.t('tests.index.count_questions')
+      th = I18n.t('.actions')
+  tbody
+    - tests.each do |test|
       tr
-        th = I18n.t('tests.index.title')
-        th = I18n.t('tests.index.level')
-        th = I18n.t('tests.index.category')
-        th = I18n.t('tests.index.count_questions')
-        th = I18n.t('.actions')
-    tbody
-      - tests.each do |test|
-        tr
-          td = test.title
-          td align="center" = test.level
-          td = test.category&.title
-          td align="center" = test.questions.count
-          td = button_to I18n.t('tests.test.start_test_button'), start_test_path(test.id)
+        td align="center" = test.level
+        td = test.title
+        td = test.category&.title
+        td align="center" = test.questions.count
+        td = button_to I18n.t('tests.test.start_test_button'), start_test_path(test.id)

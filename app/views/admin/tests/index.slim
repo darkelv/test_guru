@@ -1,11 +1,14 @@
 h2
   = I18n.t('admin.tests.index.header')
 
-table
-  thead
+table.table.table-hover
+  thead.thead-dark
     tr
       th = I18n.t('tests.index.test_number')
-      th = I18n.t('tests.index.title')
+      th.sort-by-title.pointer
+        = I18n.t('tests.index.title')
+        = octicon 'arrow-up', class: 'text-success hide', height: 20
+        = octicon 'arrow-down', class: 'text-success hide', height: 20
       th = I18n.t('tests.index.level')
       th = I18n.t('tests.index.category')
       th = I18n.t('tests.index.count_questions')
