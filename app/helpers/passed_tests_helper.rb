@@ -15,4 +15,8 @@ module PassedTestsHelper
       end
     end
   end
+
+  def get_progress_percentage
+    ((@current_test_passage.question_number / @current_test_passage.questions_count.to_f) * 100).to_i
+  end
 end

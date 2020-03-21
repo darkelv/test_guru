@@ -72,6 +72,8 @@ ru:
         title: 'Редактировать тест "%{test_title}"'
       update:
         success: "Тест успешно обновлен."
+      form_inline:
+        submit: "OK"
     base:
       not_authorized_to_see_the_page: "Доступ к данной странице разрешен только администраторам"
     layouts:
