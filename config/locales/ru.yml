@@ -37,6 +37,7 @@ ru:
       level: "Уровень"
       category: "Категория"
       count_questions: "Количество вопросов"
+      test_not_complete: "Тест еще не готово"
     test:
       start_test_button: "Начать"
     start:

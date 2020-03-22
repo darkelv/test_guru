@@ -34,6 +34,7 @@ en:
       level: "Level"
       category: "Category"
       count_questions: "Count questions"
+      test_not_complete: "Test not complete"
     test:
       start_test_button: "Start"
     start:
