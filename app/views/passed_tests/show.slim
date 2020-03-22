@@ -4,6 +4,8 @@
   .card.border-primary
     .card-body
       = show_current_question_num_of_total
+      div.progress
+        = content_tag :div, class: 'progress-bar', role: 'progressbar', 'aria-valuemin' => 0, 'aria-valuemax' => 100, data: {progress_percentage: get_progress_percentage} do
       .card-mt-3
         .card-body
           = @current_test_passage.current_question.body
