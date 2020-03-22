@@ -25,6 +25,7 @@ en:
       welcome_back: "Welcome back, %{username}!"
       signup: "Sign Up"
       login: "Log In"
+      leave_feedback: "Leave feedback"
   tests:
     index:
       header: "List of all tests:"
@@ -85,6 +86,12 @@ en:
         question: "Question"
         url: "URL"
         user_email: "User email"
+    feedbacks:
+      create:
+        success: "We have received your message and will be in touch soon!"
+        error: "There was an error sending your message. Please try again."
+      form:
+          send: "Send"
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'

@@ -18,6 +18,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :feedbacks, only: %i[new create] do
+    get :new
+    post :create
+  end
+
   namespace :admin do
     resources :tests do
       patch :update_inline, on: :member

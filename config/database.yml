@@ -18,3 +18,13 @@ test:
   password: pguser
   host: localhost
   reconnect: true
+
+production:
+  adapter: postgresql
+  database: test_guru_production
+  pool: 5
+  timeout: 5000
+  username: pguser
+  password: pguser
+  host: localhost
+  reconnect: true

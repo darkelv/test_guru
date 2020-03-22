@@ -1,6 +1,7 @@
 nav class= 'navbar navbar-light bg-light'
   - if user_signed_in?
     = link_to I18n.t('admin.layouts.navigation.title'), current_user.admin? ? admin_tests_path : root_path, class: "navbar-brand"
+    = link_to I18n.t('layouts.navigation.leave_feedback'), new_feedback_path, class: "navbar-brand"
     span
       => I18n.t('layouts.navigation.welcome_back', username: current_user.name)
       = link_to I18n.t('layouts.navigation.logout_link'), destroy_user_session_path, method: :delete
