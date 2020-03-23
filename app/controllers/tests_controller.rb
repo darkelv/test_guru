@@ -7,8 +7,12 @@ class TestsController < ApplicationController
   end
 
   def start
-    current_user.tests.push(@test)
-    redirect_to current_user.test_passage(@test), notice: t('.success')
+    if @test.questions.any?
+      current_user.tests.push(@test)
+      redirect_to current_user.test_passage(@test), notice: t('.success')
+    else
+      redirect_to root_path, flash: {error: I18n.t('tests.index.test_not_complete')}
+    end
   end
 
   private
