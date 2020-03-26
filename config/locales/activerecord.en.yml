@@ -11,6 +11,15 @@ en:
         email: "Email"
         password: "Password"
         password_confirmation: "Password confirmation"
+      badge:
+        title: "Titile"
+        image: "Image"
+        condition: "Сondition of issue"
+        descriprion: "Description"
+        conditions:
+          all_in_category: "All in category"
+          all_in_level: "All in level"
+          passed_on_first_try: "Passed on first try"
     errors:
       messages:
         blank: "can't be blank"

@@ -11,6 +11,15 @@ ru:
         email: "Email"
         password: "Пароль"
         password_confirmation: "Подтверждение пароля"
+      badge:
+        title: "Название"
+        image: "Картинка"
+        condition: "Условие выдачи"
+        description: "Описание"
+        conditions:
+          all_in_category: "Все в категории"
+          all_in_level: "Все на уровне"
+          passed_on_first_try: "Певрое прохождение теста"
 
     errors:
       messages:

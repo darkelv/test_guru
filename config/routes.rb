@@ -23,7 +23,10 @@ Rails.application.routes.draw do
     post :create
   end
 
+  resources :badges, only: :index
+
   namespace :admin do
+    resources :badges
     resources :tests do
       patch :update_inline, on: :member
 

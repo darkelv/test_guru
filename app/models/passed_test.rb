@@ -7,6 +7,14 @@ class PassedTest < ApplicationRecord
 
   before_validation :before_validation_set_next_question
 
+  scope :by_category, ->(category){
+    joins(:test).where(tests: { category: category })
+  }
+
+  scope :by_level, ->(level){
+    joins(:test).where(tests: { level: level })
+  }
+
   def accept!(answer_ids)
     return if answer_ids.nil?
 

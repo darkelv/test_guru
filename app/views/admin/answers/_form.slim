@@ -1,5 +1,5 @@
-= render 'layouts/errors', resource: @answer
-= form_for @answer, url: admin_question_answers_path(@question) do |f|
+= form_with model: [:admin, @question, @answer], local: true do |f|
+  = render 'layouts/errors', resource: @answer
   = f.label :body
   = f.text_field :body
   = f.label :correct

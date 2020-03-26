@@ -1,0 +1,13 @@
+= render 'layouts/errors', resource: badge
+= form_with model: [:admin, badge], local: true do |f|
+  .col
+    => f.label :condition
+    = f.collection_select :condition, Badge::CONDITIONS, :first, :first, prompt: true
+    p
+    => f.label :title
+    = f.text_field :title, id: :badge_title
+    p
+    => f.label :description
+    = f.text_field :description
+    p
+    = f.submit

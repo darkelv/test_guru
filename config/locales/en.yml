@@ -93,6 +93,10 @@ en:
         error: "There was an error sending your message. Please try again."
       form:
           send: "Send"
+    badges:
+      index:
+        received_badges: "Received badges"
+        header: "Badge list"
   tests_mailer:
     completed_test:
       subject: 'You just completed the TestGuru test!'
@@ -103,4 +107,5 @@ en:
   link_to_show: "Show"
   link_to_edit: "Edit"
   link_to_back: "Back"
+  link_to_new: "New"
   actions: "Actions"

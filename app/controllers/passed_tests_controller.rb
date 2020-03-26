@@ -13,7 +13,11 @@ class PassedTestsController < ApplicationController
 
     if @current_test_passage.completed?
       TestsMailer.completed_test(@current_test_passage).deliver_now
+      badges = BadgeService.new(@current_test_passage).check_badges
 
+      if badges.any?
+        current_user.badges << badges
+      end
       redirect_to result_passed_test_path(@current_test_passage)
     else
       render :show

@@ -10,6 +10,7 @@ class Admin::AnswersController < Admin::BaseController
   end
 
   def edit
+    @question = @answer.question
   end
 
   def create
@@ -32,6 +33,7 @@ class Admin::AnswersController < Admin::BaseController
 
   def destroy
     @answer.destroy
+
     redirect_to [:admin, @answer.question]
   end
 

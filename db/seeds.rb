@@ -19,6 +19,15 @@ tests = Test.create!([{title: 'RoR beginner', level: 0, author: users[0], catego
               {title: 'Car driving beginner', level: 1, author: users[0], category:  categories[1]},
               {title: 'Car driving pro', level: 5, author: users[0], category:  categories[1]}])
 
+badges = []
+Badge::CONDITIONS.each do |key, value|
+  badges << Badge.create(title: key, condition: key)
+end
+
+badges.each do |badge|
+  UserBadge.create(user: users[0], badge: badge)
+end
+
 questions = []
 tests.each do |test|
   question_number = 1
