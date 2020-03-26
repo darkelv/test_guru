@@ -18,6 +18,8 @@ class PassedTest < ApplicationRecord
   end
 
   def completed?
+    return true if timeout?
+
     current_question.nil?
   end
 
@@ -33,7 +35,29 @@ class PassedTest < ApplicationRecord
     test.questions.count
   end
 
+  def timeout?
+    return false unless timer?
+
+    Time.current > limit_time
+  end
+
+  def timer?
+    test.timer.nonzero?
+  end
+
+  def ontime?
+    !timeout?
+  end
+
+  def time_left
+    (limit_time - Time.current).to_i
+  end
+
   private
+
+  def limit_time
+    created_at + test.timer.minutes
+  end
 
   def before_validation_set_next_question
     self.current_question = next_question

@@ -19,4 +19,8 @@ module PassedTestsHelper
   def get_progress_percentage
     (((@current_test_passage.question_number - 1) / @current_test_passage.questions_count.to_f) * 100).to_i
   end
+
+  def minutes_left(seconds)
+    (Time.mktime(0)+seconds).strftime("%M:%S")
+  end
 end

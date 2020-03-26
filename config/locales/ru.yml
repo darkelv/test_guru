@@ -38,6 +38,7 @@ ru:
       category: "Категория"
       count_questions: "Количество вопросов"
       test_not_complete: "Тест еще не готово"
+      timer: "Таймер"
     test:
       start_test_button: "Начать"
     start:
@@ -46,9 +47,11 @@ ru:
     result:
       header: 'Тест "%{title}" успешно завершен!'
       score_message: "Ваша оценка: %{scores}"
+      timeout: "Время вышло!"
     show:
       title: "Текущий тест: %{test_title}"
       button_next: "Далее"
+      timer: 'Отсавшееся время: '
     result_message:
       passed_test_message: "Вы прошли тест"
       failed_test_message: "Тест не пройден"

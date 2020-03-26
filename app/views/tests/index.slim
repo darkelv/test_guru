@@ -11,6 +11,7 @@ table.table.table-hover
         = octicon 'arrow-down', class: 'text-success hide', height: 20
       th = I18n.t('tests.index.category')
       th = I18n.t('tests.index.count_questions')
+      th = I18n.t('tests.index.timer')
       th = I18n.t('.actions')
   tbody
     - tests.each do |test|
@@ -19,4 +20,5 @@ table.table.table-hover
         td = test.title
         td = test.category&.title
         td align="center" = test.questions.count
+        td = test.timer
         td = button_to I18n.t('tests.test.start_test_button'), start_test_path(test.id)

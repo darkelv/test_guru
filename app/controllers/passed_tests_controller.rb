@@ -14,6 +14,8 @@ class PassedTestsController < ApplicationController
     if @current_test_passage.completed?
       TestsMailer.completed_test(@current_test_passage).deliver_now
 
+      flash[:alarm] = t('passed_tests.result.timeout') if @current_test_passage.timeout?
+
       redirect_to result_passed_test_path(@current_test_passage)
     else
       render :show
