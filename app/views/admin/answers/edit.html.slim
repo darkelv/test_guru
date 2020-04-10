@@ -4,7 +4,7 @@ p
   | Вопрос:
   = @answer.question.body
 br
-= render 'form'
+= render 'form', locals: {answer: @answer, question: @answer.question}
 
 = link_to I18n.t('.link_to_back'), admin_question_path(@answer.question)
 

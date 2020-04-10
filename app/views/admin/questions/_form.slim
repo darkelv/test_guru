@@ -1,5 +1,5 @@
-= render partial: "layouts/errors", locals: {resource: @question}
-= form_for :question, url: admin_test_questions_path(test_id) do |f|
+= form_with model: [:admin, @question], local: true do |f|
+  = render partial: "layouts/errors", locals: {resource: @question}
   =f.label :body, "Текст вопроса:"
   =f.text_field :body
   =f.submit "Сохранить"

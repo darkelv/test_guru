@@ -1,0 +1,57 @@
+h1
+  = I18n.t('admin.badges.index.received_badges')
+
+table.table.table-hover
+  thead.thead-dark
+    tr
+      th = I18n.t('activerecord.attributes.badge.title')
+      th = I18n.t('activerecord.attributes.badge.condition')
+      th = I18n.t('activerecord.attributes.badge.description')
+      th = I18n.t('activerecord.attributes.badge.image')
+  tbody
+    - received_badges.each do |badge|
+      tr
+        td = badge.title
+        td = I18n.t("activerecord.attributes.badge.conditions.#{badge.condition}")
+        td = truncate(badge.description, length: 25)
+        td
+          button.btn.btn-primary data-toggle="modal" type="button"
+            span
+              = I18n.t("activerecord.attributes.badge.conditions.#{badge.condition}")
+              img.img.hidden src= image_path(badge.image)
+
+h1
+  = I18n.t('admin.badges.index.header')
+
+table.table.table-hover
+  thead.thead-dark
+    tr
+      th = I18n.t('activerecord.attributes.badge.title')
+      th = I18n.t('activerecord.attributes.badge.condition')
+      th = I18n.t('activerecord.attributes.badge.description')
+      th = I18n.t('activerecord.attributes.badge.image')
+  tbody
+    - badges.each do |badge|
+      tr
+        td = badge.title
+        td = I18n.t("activerecord.attributes.badge.conditions.#{badge.condition}")
+        td = truncate(badge.description, length: 25)
+        td
+          button.btn.btn-primary data-toggle="modal" type="button"
+            span
+              = I18n.t("activerecord.attributes.badge.conditions.#{badge.condition}")
+              img.img.hidden src= image_path(badge.image)
+
+#Image.modal.fade aria-hidden="true" aria-labelledby="ImageLabel" role="dialog" tabindex="-1"
+  .modal-dialog
+    .modal-content
+      img.img-responsive src= ''
+
+javascript:
+    $(document).ready(function () {
+        $('.btn').on('click', function () {
+            var src = $(this).find('img').attr('src');
+            $('#Image img').attr("src", src);
+            $('#Image').modal();
+        });
+    });
